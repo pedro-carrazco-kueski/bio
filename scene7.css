@@ -1,0 +1,68 @@
+#scene7 {
+  background-image: linear-gradient(#483c0f, #7d5621);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  h1 {
+    animation: 0.5s 1 normal both paused letterFade;
+    animation-delay: 1s;
+    color: white;
+    font-family: "Jersey 10";
+    font-size: 10rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  h2 {
+    animation: 0.5s 1 normal both paused letterFade;
+    animation-delay: 2s;
+    color: white;
+    display: flex;
+    font-family: "Jersey 10";
+    font-size: 8rem;
+    gap: 5vh;
+    justify-content: center;
+    margin-left: -5vh;
+    text-align: center;
+    
+    label {
+      display: block;
+      padding-left: 5vh;
+      position: relative;
+
+      input {
+        visibility: hidden;
+        width: 0;
+        height: 0;
+      }
+    }
+
+    label::before {
+      content: ' ';
+      display: block;
+      left: 0;
+      position: absolute;
+      top: 0;
+    }
+
+    label:has(input:checked)::before {
+      content: '›';
+    }
+  }
+}
+#scene7.over {
+  background-image: linear-gradient(#7d5621, #b39730);
+
+  h1 {
+    animation: 2s 1 normal both paused letterFade;
+    animation-delay: 2s;
+  }
+}
+
+#scene7:focus {
+  h1, h2 {
+    animation-play-state: running;
+  }
+}

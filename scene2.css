@@ -1,0 +1,67 @@
+@keyframes letterFade {
+  0% {
+    letter-spacing: 4px;
+    opacity: 0;
+  }
+
+  100% {
+    letter-spacing: 2px;
+    opacity: 1;
+  }
+}
+#scene2 {
+  align-items: flex-end;
+  background-image: linear-gradient(#fefff5 50%, #d2edf5);
+  font-family: "New Amsterdam";
+  padding: 2rem;
+
+  section {
+    align-self: flex-start;
+    text-align: left;
+    width: 100%;
+
+    h1 {
+      color: black;
+      font-size: 3rem;
+      letter-spacing: 4px;
+      opacity: 0;
+      white-space: nowrap;
+      animation: 0.5s 1 normal both paused letterFade;
+    }
+  }
+
+  footer {
+    align-self: flex-end;
+    text-align: right;
+    width: 100%;
+
+    h2 {
+      color: black;
+      font-size: 3rem;
+      white-space: nowrap;
+      animation: 0.5s 1 normal both paused letterFade;
+    }
+  }
+}
+
+#scene2:focus {
+  section h1,
+  footer h2 {
+    animation-play-state: running;
+  }
+  section h1:nth-child(1) {
+    animation-delay: 1s;
+  }
+  section h1:nth-child(2) {
+    animation-delay: 2s;
+  }
+  section h1:nth-child(3) {
+    animation-delay: 3s;
+  }
+  footer h2:nth-child(1) {
+    animation-delay: 5s;
+  }
+  footer h2:nth-child(2) {
+    animation-delay: 6s;
+  }
+}

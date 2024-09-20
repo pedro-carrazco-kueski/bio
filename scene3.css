@@ -1,0 +1,154 @@
+@keyframes yearsCounter {
+  0% { margin-top: 0rem; }
+  5% { margin-top: -57px; }
+  20% { margin-top: -57px; }
+  25% { margin-top: -115px; }
+  40% { margin-top: -115px; }
+  45% { margin-top: -173px; }
+  60% { margin-top: -173px; }
+  65% { margin-top: -230px; }
+  100% { margin-top: -230px; }
+}
+@keyframes FadeIn {
+  0% { opacity: 0;}
+  100% { opacity: 1; }
+}
+@keyframes FadeInOut {
+  0% { opacity: 0; display: none; }
+  1% { opacity: 0; display: block; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  99% { opacity: 0; display: block; }
+  100% { opacity: 0; display: none;}
+}
+
+#scene3 {
+  align-items: center;
+  background-image: linear-gradient(#d2edf5, #fbfbf4);
+  justify-content: center;
+  position: relative;
+
+  section {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    bottom: -10rem;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  .clouds {
+    bottom: 0;
+    opacity: 0;
+    left: 0;
+    background-image: url(./img/BG_Clouds.svg);
+    background-size: cover;
+  }
+  .silla {
+    bottom: 0;
+    background-image: url(./img/Silla.svg);
+    background-size: 30vw auto;
+    background-position: left bottom;
+  }
+  .buildings {
+    background-image: url(./img/Buldings.svg);
+    background-size: 80% 80%;
+    background-position: 40% 255%;
+  }
+  .trees {
+    background-image: url(./img/Trees.svg);
+  }
+  .front {
+    background-image: url(./img/Front.svg);
+  }
+
+  article {
+    align-items: center;
+    display: flex;
+    height: 50%;
+    justify-content: center;
+    width: 50%;
+
+    div {
+      animation: 3s 1 normal both paused FadeInOut;
+    }
+  }
+  article div:nth-child(1) { animation-delay: 2s; }
+  article div:nth-child(2) { animation-delay: 5s; }
+  article div:nth-child(3) { animation-delay: 9s; }
+  article div:nth-child(4) { animation-delay: 13s; }
+  article div:nth-child(5) { animation-delay: 17s; animation-name: FadeIn; animation-duration: 0.45s; }
+
+  aside {
+    align-items: center;
+    animation: .2s 1 normal both paused FadeIn;
+    animation-delay: 3s;
+    background-color: #000000CC;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    padding: 1rem;
+    position: absolute;
+    right: 10vw;
+    top: 50%;
+    translate: 0 -50%;
+
+    div {
+      display: flex;
+      width: fit-content;
+    }
+
+    h1, h2, h3 {
+      align-items: center;
+      color: white;
+      display: inline-flex;
+      flex-direction: column;
+      font-family: "New Amsterdam";
+      font-size: 3rem;
+      height: 3rem;
+      line-height: 57px;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 4rem;
+      height: auto;
+      line-height: .9;
+    }
+
+    h2 span:first-child {
+      animation: 20s 1 normal both paused yearsCounter;
+      animation-delay: 5s;
+      animation-timing-function: cubic-bezier(0.36, 2.24, 0.74, 0.69);
+    }
+  }
+}
+
+#scene3:focus h2 span:first-child,
+#scene3:focus aside,
+#scene3:focus article div {
+  animation-play-state: running;
+}
+#scene3:focus .clouds {
+  opacity: 0.1;
+  transition: opacity 1s;
+  transition-delay: 1s;
+}
+#scene3:focus .buildings {
+  bottom: 0;
+  transition: bottom 0.8s;
+  transition-delay: 0.5s;
+}
+#scene3:focus .trees {
+  bottom: 0;
+  transition: bottom 1s;
+  transition-delay: 0.5s;
+}
+#scene3:focus .front {
+  bottom: 0;
+  transition: bottom 1.2s;
+  transition-delay: 0.5s;
+}

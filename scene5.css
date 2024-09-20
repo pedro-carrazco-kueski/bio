@@ -1,0 +1,85 @@
+@keyframes CarouselRotation {
+  0% { transform: rotateY(0deg) }
+  100% { transform: rotateY(-360deg) }
+}
+
+#scene5 {
+  background-image: linear-gradient(#10151a, #352a10) ;
+  display: flex;
+  padding: 10vw 10vw 20vw;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  gap: 5vh;
+
+  h1 {
+    font-family: "New Amsterdam";
+    color: white;
+    font-size: 10rem;
+    margin-bottom: 0vh;
+    opacity: 0;
+    transition: opacity 1s, margin 3s;
+    transition-delay: 1.5s;
+  }
+
+  #slider {
+    --slider-perspective: 0vh;
+
+    aspect-ratio: 2 / 3;
+    height: 10vh;
+    perspective: 1000px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    translate: -50% -65%;
+
+    div {
+      animation: 15s infinite normal both paused linear CarouselRotation;
+      height: 100%;
+      position: absolute;
+      transform-style: preserve-3d;
+      width: 100%;
+    }
+
+    div:hover {
+      animation-play-state: paused !important;
+    }
+
+    img {
+      filter: grayscale(100%);
+      height: 10vh;
+      position: absolute;
+      width: auto;
+      transition: .5s;
+      z-index: 2;
+    }
+
+    img:hover {
+      filter: grayscale(0%);
+      height: 15vh;
+      margin-left: -2vh;
+      margin-top: -2.5vh;
+      z-index: 2;
+    }
+
+    img:nth-child( 1) { transform: rotateY(  0deg) translateZ(var(--slider-perspective)); }
+    img:nth-child( 2) { transform: rotateY( 24deg) translateZ(var(--slider-perspective)); }
+    img:nth-child( 3) { transform: rotateY( 48deg) translateZ(var(--slider-perspective)); }
+    img:nth-child( 4) { transform: rotateY( 72deg) translateZ(var(--slider-perspective)); }
+    img:nth-child( 5) { transform: rotateY( 96deg) translateZ(var(--slider-perspective)); }
+    img:nth-child( 6) { transform: rotateY(120deg) translateZ(var(--slider-perspective)); }
+    img:nth-child( 7) { transform: rotateY(144deg) translateZ(var(--slider-perspective)); }
+    img:nth-child( 8) { transform: rotateY(168deg) translateZ(var(--slider-perspective)); }
+    img:nth-child( 9) { transform: rotateY(192deg) translateZ(var(--slider-perspective)); }
+    img:nth-child(10) { transform: rotateY(216deg) translateZ(var(--slider-perspective)); }
+    img:nth-child(11) { transform: rotateY(240deg) translateZ(var(--slider-perspective)); }
+    img:nth-child(12) { transform: rotateY(264deg) translateZ(var(--slider-perspective)); }
+    img:nth-child(13) { transform: rotateY(288deg) translateZ(var(--slider-perspective)); }
+    img:nth-child(14) { transform: rotateY(312deg) translateZ(var(--slider-perspective)); }
+    img:nth-child(15) { transform: rotateY(336deg) translateZ(var(--slider-perspective)); }
+  }
+}
+#scene5:focus #slider { --slider-perspective: 33.5vh; } 
+#scene5:focus #slider > div { animation-play-state: running; } 
+#scene5:focus h1 { opacity: 1; margin-bottom: 20vh;}

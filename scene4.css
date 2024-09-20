@@ -1,0 +1,85 @@
+@keyframes Fall {
+  0% { top: 150vh; }
+  100% { top: -50vh;}
+}
+
+#scene3:has(+ #scene4:focus) section { bottom: 0; }
+#scene3:has(+ #scene4:focus) .clouds { opacity: 0.1; }
+
+#scene4 {
+  background-color: #10151a;
+  display: flex;
+  padding: 0 10vw;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    animation: 10s 1 normal both paused FadeInOut;
+    animation-delay: 2s;
+    color: white;
+    font-family: "New Amsterdam";
+    font-size: 10rem;
+    position: relative;
+    z-index: 3;
+  }
+
+  div {
+    animation: 5s 1 normal both paused Fall;
+    animation-timing-function: linear;
+    left: 50%;
+    top: 0;
+    position: absolute;
+    z-index: 1;
+  }
+
+  div:nth-child(2) {animation-duration: 8s; animation-delay: 1.0s; translate: 40vw 0;}
+  div:nth-child(3) {animation-duration: 9s; animation-delay: 2.5s; translate: 0vw 0;}
+  div:nth-child(4) {animation-duration: 8s; animation-delay: 3.4s; translate: 10vw 0;}
+  div:nth-child(5) {animation-duration: 10s; animation-delay: 4.5s; translate: -40vw 0;}
+  div:nth-child(6) {animation-duration: 6s; animation-delay: 5.4s; translate: -10vw 0;}
+  div:nth-child(7) {animation-duration: 5s; animation-delay: 6.5s; translate: 20vw 0;}
+  div:nth-child(8) {animation-duration: 10s; animation-delay: 7.4s; translate: 30vw 0;}
+  div:nth-child(9) {animation-duration: 6.5s; animation-delay: 8.3s; translate: -30vw 0;}
+  div:nth-child(10) {animation-duration: 5s; animation-delay: 9.4s; translate: -50vw 0;}
+  div:nth-child(11) {animation-duration: 7s; animation-delay: 10.7s; translate: -20vw 0;}
+
+
+  i {
+    animation: 1.2s infinite normal both paused linear LetterRain;
+    color: #68b2d8;
+    font-family: "Jersey 10";
+    font-size: 5rem;
+    position: absolute;
+    top: 90%;
+    z-index: 0;
+  }
+
+  i:nth-child(12) { animation-delay: 1.0s; left: 60%; font-size: 3px }
+  i:nth-child(13) { animation-delay: 0.5s; left: 15%; font-size: 3px }
+  i:nth-child(14) { animation-delay: 9.5s; left: 85%; font-size: 27px }
+  i:nth-child(15) { animation-delay: 7.5s; left: 40%; font-size: 21px }
+  i:nth-child(16) { animation-play-state: paused !important; }
+  i:nth-child(17) { animation-delay: 4.0s; left: 60%; font-size: 12px }
+  i:nth-child(18) { animation-delay: 4.5s; left: 5%; font-size: 12px }
+  i:nth-child(19) { animation-delay: 3.0s; left: 55%; font-size: 9px }
+  i:nth-child(20) { animation-delay: 4.0s; left: 100%; font-size: 12px }
+  i:nth-child(21) { animation-delay: 1.0s; left: 30%; font-size: 3px }
+  i:nth-child(22) { animation-delay: 5.0s; left: 80%; font-size: 15px }
+  i:nth-child(23) { animation-delay: 8.0s; left: 45%; font-size: 24px }
+  i:nth-child(24) { animation-delay: 3.5s; left: 65%; font-size: 9px }
+  i:nth-child(25) { animation-delay: 6.0s; left: 90%; font-size: 18px }
+  i:nth-child(26) { animation-delay: 7.0s; left: 10%; font-size: 21px }
+  i:nth-child(27) { animation-delay: 3.0s; left: 0%; font-size: 9px }
+  i:nth-child(28) { animation-delay: 1.5s; left: 75%; font-size: 3px }
+  i:nth-child(29) { animation-delay: 8.5s; left: 25%; font-size: 24px }
+  i:nth-child(30) { animation-delay: 5.0s; left: 50%; font-size: 15px }
+  i:nth-child(31) { animation-play-state: paused !important; }
+  i:nth-child(32) { animation-delay: 2.5s; left: 35%; font-size: 6px }
+  i:nth-child(33) { animation-delay: 5.5s; left: 95%; font-size: 15px }
+  i:nth-child(34) { animation-play-state: paused !important; }
+  i:nth-child(35) { animation-delay: 2.0s; left: 20%; font-size: 6px }
+}
+#scene4:focus { 
+  div, h1, i { animation-play-state: running; }
+}
